@@ -1,0 +1,22 @@
+package practiceautomate123;
+
+public class Fabinnaciusingrecursion {
+
+	
+	 public static int fib(int n) {
+		 
+		 if(n==1) {
+			 
+			 return 1;
+		 }
+		return n*fib(n-1);
+		 
+		 
+	 }
+	public static void main(String[] args) {
+		
+int fibnumber =fib(5);
+System.out.println(fibnumber);
+	}
+
+}
