@@ -1,0 +1,72 @@
+package practiceautomate123;
+
+public class Binarysearchtree {
+
+	private class Node {
+
+		int val;
+		Node left;
+		Node right;
+
+		public Node(int val) {
+			this.val = val;
+
+		}
+	}
+
+	public void Insert(int value) {
+
+		root = Insert(root, value);
+	}
+
+	Node root;
+
+	public Node Insert(Node root, int value) {
+		if (root == null) {
+
+			root = new Node(value);
+			return root;
+		}
+		if (value < root.val) {
+
+			root.left = Insert(root.left, value);
+
+		} else if (value > root.val) {
+			root.right = Insert(root.right, value);
+
+		}
+		return root;
+
+	}
+
+	public void sorted() {
+		inordertraverse(root);
+
+	}
+
+	public void inordertraverse(Node root) {
+
+		if
+
+		(root != null) {
+			inordertraverse(root.left);
+			System.out.println(root.val);
+			inordertraverse(root.right);
+
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Binarysearchtree a = new Binarysearchtree();
+		a.Insert(3);
+		a.Insert(2);
+		a.Insert(1);
+		a.Insert(5);
+		a.Insert(6);
+		a.sorted();
+
+	}
+
+}
