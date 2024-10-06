@@ -1,0 +1,75 @@
+package practiceautomate123;
+
+
+
+public class preorder {
+
+	private class Node {
+
+		int val;
+		Node left;
+		Node right;
+
+		public Node(int val) {
+			this.val = val;
+
+		}
+	}
+
+	public void Insert(int value) {
+
+		root = Insert(root, value);
+	}
+
+	Node root;
+
+	public Node Insert(Node root, int value) {
+		if (root == null) {
+
+			root = new Node(value);
+			return root;
+		}
+		if (value < root.val) {
+
+			root.left = Insert(root.left, value);
+
+		} else if (value > root.val) {
+			root.right = Insert(root.right, value);
+
+		}
+		return root;
+
+	}
+
+	public void sorted() {
+		preordertraverse(root);
+
+	}
+
+	public void preordertraverse(Node root) {
+
+		if
+
+		(root != null) {
+			
+			System.out.println(root.val);
+			preordertraverse(root.left);
+			preordertraverse(root.right);
+
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		preorder a = new preorder();
+		a.Insert(3);
+		a.Insert(2);
+		a.Insert(1);
+		a.Insert(5);
+		a.Insert(6);
+		a.sorted();
+
+	}
+
+}
