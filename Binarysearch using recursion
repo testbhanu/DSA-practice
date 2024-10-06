@@ -1,0 +1,39 @@
+package practiceautomate123;
+
+public class Binarysearchusingrecursion {
+	public static int binarysearch(int[] arr, int target, int left, int right) {
+
+		if (right < left) {
+
+			return -1;
+
+		}
+		int mid = left + right / 2;
+		if (arr[mid] == target) {
+
+			return mid;
+		} else if (arr[mid] > target) {
+
+			right = mid - 1;
+
+			return binarysearch(arr, target, left, right);
+
+		} else {
+
+			left = mid + 1;
+			return binarysearch(arr, target, left, right);
+
+		}
+
+	}
+
+	public static void main(String[] args) {
+
+		int arr[] = { 2, 3, 4, 5, 6, 7, 8, 9 };
+		int index =binarysearch(arr,5,0,arr.length);
+		
+		System.out.println(index);
+		
+	}
+
+}
