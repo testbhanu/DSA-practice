@@ -1,0 +1,36 @@
+package practiceautomate123;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Countoccurenceofeacheleementarray {
+
+	public static void findoccurence(int[] nums) {
+		Map<Integer, Integer> s = new HashMap<Integer, Integer>();
+		for (int ele : nums) {
+
+			if (s.containsKey(ele)) {
+
+				s.put(ele, s.get(ele) + 1);
+			} else {
+				s.put(ele, 1);
+
+			}
+
+		}
+
+		for (Map.Entry<Integer, Integer> m1 : s.entrySet()) {
+
+			System.out.println(m1.getKey() + " : " + m1.getValue());
+
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int nums[] = { 1, 2, 3, 4, 4, 4, 3, 2, 1, 6, 6, 6, 6, 7, 5, 5 };
+		findoccurence(nums);
+
+	}
+
+}
