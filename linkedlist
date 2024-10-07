@@ -1,0 +1,55 @@
+package practiceautomate123;
+
+public class Linkedlist {
+	class Node {
+
+		int val;
+		Node next;
+
+		Node(int val) {
+			this.val = val;
+		}
+
+	}
+public void printlinkedlist(Node head) {
+	
+	Node current=head;
+	while(current!=null) {
+		
+		System.out.println(current.val);
+		current=current.next;
+		
+	}
+}
+static Node head = null;
+	Node tail = null;
+	public void addNodeatend(int val) {
+	
+		Node newNode = new Node(val);
+		if (head == null || tail == null) {
+			head = newNode;
+			tail = newNode;
+
+		} else {
+			tail.next = newNode;
+			newNode.next = null;
+			tail = newNode;
+
+		}
+
+	}
+
+	public static void main(String[] args) {
+		
+		Linkedlist l=new Linkedlist();
+		l.addNodeatend(10);
+		l.addNodeatend(20);
+		l.addNodeatend(30);
+		l.addNodeatend(40);
+
+l.printlinkedlist(head);
+
+
+	}
+
+}
