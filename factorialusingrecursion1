@@ -1,0 +1,25 @@
+package practiceautomate123;
+
+public class sumofdigitaarray {
+
+	static int arr[] = {2,3,4,5,67,8};
+public static int  sumofdigits(int n) {
+	
+	if(n==0) {
+		
+		return arr[n];
+	}
+	return arr[n]+sumofdigits(n-1);
+	
+	
+	
+}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int value =sumofdigits(arr.length-1);
+		System.out.println(value);
+
+	}
+
+}
